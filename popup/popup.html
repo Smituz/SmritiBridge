@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmritiBridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>🌉 SmritiBridge</h1>
+      <p class="tagline">AI Context Transfer Tool</p>
+    </header>
+
+    <!-- Status Section -->
+    <section class="status-section">
+      <div id="status-indicator" class="status-indicator">
+        <span class="status-dot"></span>
+        <span id="status-text">Checking...</span>
+      </div>
+      
+      <div id="conversation-info" class="info-grid">
+        <div class="info-item">
+          <span class="label">Total Messages</span>
+          <span id="total-messages" class="value">-</span>
+        </div>
+        <div class="info-item">
+          <span class="label">User</span>
+          <span id="user-messages" class="value">-</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Assistant</span>
+          <span id="assistant-messages" class="value">-</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Important Messages -->
+    <section class="importance-section">
+      <h2>📊 Most Important Messages</h2>
+      <div id="top-messages" class="message-list">
+        <p class="loading">Analyzing importance...</p>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="actions-section">
+      <button id="generate-btn" class="btn btn-primary" disabled>
+        <span class="btn-icon">🗜️</span>
+        Generate Context
+      </button>
+      
+      <div id="export-result" class="export-result hidden">
+        <div class="export-stats">
+          <p><strong>Compressed:</strong> <span id="compressed-count">-</span> messages</p>
+          <p><strong>Tokens:</strong> <span id="token-count">-</span></p>
+          <p><strong>Reduction:</strong> <span id="reduction-percent">-</span>%</p>
+        </div>
+        
+        <textarea id="context-output" class="context-textarea" readonly></textarea>
+        
+        <button id="copy-btn" class="btn btn-success">
+          <span class="btn-icon">📋</span>
+          Copy to Clipboard
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer-text">Paste the context into any AI tool to continue your conversation</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
